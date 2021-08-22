@@ -1,40 +1,61 @@
 {
   "name": "which-fe-tech-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "engines": {
+    "yarn": "^1.22"
+  },
   "scripts": {
-    "test": "jest",
-    "start": "webpack-dev-server --quiet"
+    "build": "NODE_ENV=production ./node_modules/.bin/ts-node src/config/fuse.ts",
+    "clean": "rm -f -r .cache/* dist/*",
+    "start": "NODE_ENV=development ./node_modules/.bin/ts-node src/config/fuse.ts",
+    "test": "yarn jest"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:acresoftware/recruitment/fe-tech-test-p.git"
+  },
+  "author": "stephen.d.francis@gmail.com",
+  "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@babel/core": "7.7.4",
-    "@babel/preset-env": "7.7.4",
-    "css-loader": "3.2.0",
-    "jest": "24.9.0",
-    "style-loader": "1.0.0",
-    "webpack": "4.41.2",
-    "webpack-cli": "3.3.10",
-    "webpack-dev-server": "3.9.0"
+    "react": "^16.13",
+    "react-dom": "^16.13"
   },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "esmodules": true
-          }
-        }
-      ]
-    ]
+  "devDependencies": {
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0",
+    "@types/node": "^14.14",
+    "@types/react": "^17.0",
+    "@types/react-dom": "^17.0",
+    "fuse-box": "^4.0.1-next.7",
+    "jest": "^26.6",
+    "nyc": "^15.1",
+    "postcss-modules": "^4.1.3",
+    "ts-jest": "^26.4",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.1"
   },
   "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
-      "\\.(css|less|scss)$": "<rootDir>/test/__mocks__/styleMock.js"
+      ".+\\.(css)$": "<rootDir>/src/config/identity-obj-proxy-esm.js"
+    },
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "src/__tests__/.*\\.(ts|tsx)$",
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "src/tsconfig.json",
+        "diagnostics": {
+          "ignoreCodes": [
+            151001
+          ]
+        }
+      }
     }
   }
 }

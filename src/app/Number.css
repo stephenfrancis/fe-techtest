@@ -1,0 +1,38 @@
+.number {
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  border: 3px solid #aaa;
+  padding: 10px;
+  margin: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.number:hover {
+  border-color: green;
+  color: green;
+  background-color: lightgreen;
+}
+
+@media (min-width: 700px) {
+  .number {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .number {
+    width: calc(33% - 20px);
+  }
+}
+
+.number.selected {
+  border-color: darkorange;
+  background-color: peachpuff;
+  color: darkorange;
+}
+
+.number.highlight {
+  border-color: orange;
+  color: orange;
+}
