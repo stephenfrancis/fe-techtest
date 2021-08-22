@@ -2,43 +2,16 @@
 
 ## Getting up and running
 
-Clone or fork this repo. If you'd rather start from scratch with your own setup that's fine too, as long as you complete [the exercise](#the-exercise).
+I have used my preferred project outline, which uses yarn and fuse-box as the bundler.
 
-This repo contains a very simple webpack based development environment. We'll need to install some stuff to get going...
+Usage:
 
-### Requirements
-
-Webpack needs nodejs to do its thing. We aren't making a node app - just using it as a dev tool.
-
-* [nodejs](https://nodejs.org/en/)
-
-Installing node.js will also install [npm](https://www.npmjs.com) for us too. We'll need it for dependencies and some scripts.
-
-### Dependencies
-
-We have specified all the dependencies we need in the `package.json` file. Npm will install them for us:
-
-`$ npm install`
-
-### Run!
-
-Ok, time to run the app. Npm takes care of business again:
-
-`$ npm start`
-
-This will fire up the wepback dev server. It's not important to understand how it works for now.
-
-Open [http://localhost:8080/](http://localhost:8080/) in your browser and you should see a basic html page. If you open the development console in your browser you should see a welcome message.
-
-### Development
-
-The source files are located in `src/`. If you change a file, webpack will reload your files and refresh the browser for you.
+- `$ yarn`
+- `$ yarn start`
 
 ### Test
 
-You can run the example tests:
-
-`$ npm test`
+`$ yarn test`
 
 ## The exercise
 
